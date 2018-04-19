@@ -53,15 +53,18 @@ and to the *datanode* (slave) by `docker exec -it hadoop-datanode1 bash`.
 By default, the HDFS replication factor is set to 1, because it is assumed that
 a local Docker cluster will be started with a single datanode.
 To override the replication setting simply change the `HDFS_REPLICATION_FACTOR`
-environment variable in the `docker-compose.yml` file (and also add more datanodes).
-Adding more data nodes adds the complexity of exposing all datanode UI ports to
+environment variable in the `docker-compose.yml` file (and also add more datanodes). Do not forget to change the `ports`,`container-name`and `hostname` of ech new datanode create. That is to allow individual Docker container to be created with a singe `ContainerID`. Adding more data nodes adds the complexity of exposing all datanode UI ports to
 `localhost`. In this scenario, no UI ports should be exposed to avoid the conflict.
+
+#### Cleaning old garbage from datanodes
+
+When restarting Hadoop, do not forget to run `clean-hdfs-directories.sh` from `cd cluster-setup/local-cluster`, otherwise, your datanode will never appear and `~/utils/run-wordcount.sh` will crash.
 
 ### Setting up a standalone Hadoop cluster
 
 #### Preparation
 
-Create the `hadoop` user on the host system, e.g. `useradd hadoop`
+Create the `hadoop` user on the host system, e.g. `useradd hadoop` 
 
 *RHEL/CentOS note*
 
