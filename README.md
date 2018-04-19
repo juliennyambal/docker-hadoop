@@ -141,7 +141,7 @@ If any user privilege is encountered, do:
         `<value>false</value>`\
     `</property>`
  
- From [https://stackoverflow.com/questions/11593374/permission-denied-at-hdfs](Stackoverflow)
+ From [Stackoverflow](https://stackoverflow.com/questions/11593374/permission-denied-at-hdfs)
     
    
 
