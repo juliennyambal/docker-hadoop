@@ -135,11 +135,11 @@ Verify that the *datanodes* are correctly registered, issue on *namenode*: `hdfs
 If any user privilege is encountered, do:
 
 1. open `$HADOOP_CONF/hdfs-site.xml`,
-2. add the lines:
-    `<property>\
-      <name>dfs.permissions</name>
-      <value>false</value>
-    </property>`
+2. add the lines:\
+    `<property>`\
+      `<name>dfs.permissions</name>`\
+      `<value>false</value>`\
+    `</property>`\
 
 Interacting with HDFS
 ---------------------
