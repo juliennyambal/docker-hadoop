@@ -50,6 +50,8 @@ other than the default one slave node. If you add more slaves then also edit the
 You can log into the *namenode* (master) by issuing `docker exec -it hadoop-namenode bash`
 and to the *datanode* (slave) by `docker exec -it hadoop-datanode1 bash`.
 
+**NB:** Make sure that you open each `datanode`s in a new terminal screen. Regarding the `namenode`s, open at least 2 of them. Do **not** `su` more than once anywhere. Once you are done in an account, exit.
+
 By default, the HDFS replication factor is set to 1, because it is assumed that
 a local Docker cluster will be started with a single datanode.
 To override the replication setting simply change the `HDFS_REPLICATION_FACTOR`
