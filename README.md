@@ -140,6 +140,10 @@ If any user privilege is encountered, do:
         `<name>dfs.permissions</name>`\
         `<value>false</value>`\
     `</property>`
+ 
+ From [https://stackoverflow.com/questions/11593374/permission-denied-at-hdfs](Stackoverflow)
+    
+   
 
 Interacting with HDFS
 ---------------------
