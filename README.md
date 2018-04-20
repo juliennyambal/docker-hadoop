@@ -144,7 +144,10 @@ If any user privilege is encountered, do:
  
  From [Stackoverflow](https://stackoverflow.com/questions/11593374/permission-denied-at-hdfs)
     
-   
+Setting Avro 4.0.0 with Hadoop 2.9.0 and Spark 2.2.0
+---------------------   
+
+
 
 Interacting with HDFS
 ---------------------
