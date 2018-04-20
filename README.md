@@ -150,12 +150,26 @@ Setting Avro 4.0.0 with Hadoop 2.9.0 and Spark 2.2.0
 In this docker, I have included the install of `python-pip`. From there you will need to install `pyspark` (Spark for python). After that, some spark settings (obviously as a `root` user):
 
 - Download the spar-avro jar file: [spark-avro jar](http://repo1.maven.org/maven2/com/databricks/spark-avro_2.11/4.0.0/spark-avro_2.11-4.0.0.jar), and put it in `$HADOOP/jars/` folder (or equivalent spark jar folder: /usr/...),
-- Modify the file in `$HADOOP/conf/spark-defaults.conf`.  Append these lines:\
+- Modify the file in `$HADOOP/conf/spark-defaults.conf`.  Append these lines to the latter file: 
 
 `spark.driver.extraClassPath /opt/spark-jars/spark-avro_2.10-2.0.1.jar`\
 `spark.executor.extraClassPath /opt/spark-jars/spark-avro_2.10-2.0.1.jar`
 
 It might be a good idea to copy that file and modify afterward. You will have a file for reversals,
+- Once the above are done, run python this way:
+
+`pyspark --packages com.databricks:spark-avro_2.11:4.0.0`
+
+Notice that, `pyspark` **needs** to be in `$PATH` environment, otherwise, either you include in the path env. variables, or you look for `pyspark` located in `.../bin/pyspark`.
+
+Now, test your configuration:
+
+`df = sqlContext.sqlContext.read.format("com.databricks.spark.avro").load("/user/mapr/avro-test/t.avro")`\
+`a = df.collect()`
+
+For this, you might need to create your own avro file, otherwise you might get an error like this: 
+
+`: java.io.IOException: Not an Avro data file`.
 
 Interacting with HDFS
 ---------------------
