@@ -1,4 +1,4 @@
-Segence Hadoop Docker container
+Segence Hadoop Docker container + Avro (Python)
 ===============================
 
 Overview
@@ -7,9 +7,10 @@ Overview
 This Docker container contains a full Hadoop distribution with the following components:
 
 - Hadoop 2.9.0 (including YARN)
+- Spark 2.2.0
+- Avro 4.0.0 (to be uploaded)
 - Oracle JDK 8
 - Scala 2.11.11
-- Spark 2.2.0
 - Zeppelin 0.7.3
 
 Setting up a new Hadoop cluster
