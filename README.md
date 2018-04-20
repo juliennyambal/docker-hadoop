@@ -152,7 +152,7 @@ In this docker, I have included the install of `python-pip`. From there you will
 - Download the spar-avro jar file: [spark-avro jar](http://repo1.maven.org/maven2/com/databricks/spark-avro_2.11/4.0.0/spark-avro_2.11-4.0.0.jar), and put it in `$HADOOP/jars/` folder (or equivalent spark jar folder: /usr/...),
 - Modify the file in `$HADOOP/conf/spark-defaults.conf`.  Append these lines:\
 
-`spark.driver.extraClassPath /opt/spark-jars/spark-avro_2.10-2.0.1.jar`
+`spark.driver.extraClassPath /opt/spark-jars/spark-avro_2.10-2.0.1.jar`\
 `spark.executor.extraClassPath /opt/spark-jars/spark-avro_2.10-2.0.1.jar`
 
 It might be a good idea to copy that file and modify afterward. You will have a file for reversals,
