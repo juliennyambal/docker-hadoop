@@ -8,7 +8,7 @@ This Docker container contains a full Hadoop distribution with the following com
 
 - Hadoop 2.9.0 (including YARN)
 - Spark 2.2.0
-- Avro 4.0.0 (to be uploaded)
+- Avro 4.0.0
 - Oracle JDK 8
 - Scala 2.11.11
 - Zeppelin 0.7.3
@@ -170,6 +170,8 @@ Now, test your configuration:
 For this, you might need to create your own avro file, otherwise you might get an error like this: 
 
 `: java.io.IOException: Not an Avro data file`.
+
+References: [Databricks](https://github.com/databricks/spark-avro),[York Huang](https://yorkhuang-au.github.io/2016/09/07/Setup-Pyspark/).
 
 Interacting with HDFS
 ---------------------
