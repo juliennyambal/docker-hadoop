@@ -109,7 +109,7 @@ where *NAMENODE HOST NAME* is the host name of the *namenode* and *HDFS REPLICAT
 is the replication factor for HDFS blocks (defaults to 2, and has to be consistent throughout
 all cluster nodes).
 
-Starting the cluster
+Starting the cluster (Hadoop)
 --------------------
 
 Once either a local or standalone cluster is provisioned, follow the below steps:
@@ -145,11 +145,13 @@ If any user privilege is encountered, do:
  From [Stackoverflow](https://stackoverflow.com/questions/11593374/permission-denied-at-hdfs)
     
 Setting Avro 4.0.0 with Hadoop 2.9.0 and Spark 2.2.0
----------------------   
+---------------------  
+
+#### Avro
 
 In this docker, I have included the install of `python-pip`. From there you will need to install `pyspark` (Spark for python). After that, some spark settings (obviously as a `root` user):
 
-- Download the spar-avro jar file: [spark-avro jar](http://repo1.maven.org/maven2/com/databricks/spark-avro_2.11/4.0.0/spark-avro_2.11-4.0.0.jar), and put it in `$HADOOP/jars/` folder (or equivalent spark jar folder: /usr/...),
+- Download the spark-avro jar file: [spark-avro jar](http://repo1.maven.org/maven2/com/databricks/spark-avro_2.11/4.0.0/spark-avro_2.11-4.0.0.jar), and put it in `$HADOOP/jars/` folder (or equivalent spark jar folder: /usr/...),
 - Modify the file in `$HADOOP/conf/spark-defaults.conf`.  Append these lines to the latter file: 
 
 `spark.driver.extraClassPath /opt/spark-jars/spark-avro_2.10-2.0.1.jar`\
@@ -172,6 +174,16 @@ For this, you might need to create your own avro file [This might help](https://
 `: java.io.IOException: Not an Avro data file`.
 
 References: [Databricks](https://github.com/databricks/spark-avro),[York Huang](https://yorkhuang-au.github.io/2016/09/07/Setup-Pyspark/).
+
+#### Spark
+
+Although spark is set on the system, it is not running. To do so we have to:
+
+- **Starting a spark master node manually** with the command `$SPARK_HOME/sbin/start-master.sh`. Once started, the master will print out a `spark://HOST:PORT URL` for itself, which you can use to connect workers to it, or pass as the `master` argument to SparkContext. You can also find this URL on the master’s web UI, which is [http://localhost:8080](http://localhost:8080) by default. Alternatively, you can check the file `/usr/local/spark/logs/spark--org.apache.spark.deploy.master.Master-1-hadoop-namenode.out` for more information about the new started spark master node.
+
+- **Starting a spark slave node manually**, similarly, you can start one or more workers and connect them to the master via the command `$SPARK_HOME/sbin/start-slave.sh <master-spark-URL>`. Once you have started a worker, look at the master’s web UI (http://localhost:8080 by default). You should see the new node listed there, along with its number of CPUs and memory (minus one gigabyte left for the OS).
+
+Reference: [Spark Standalone Mode](https://spark.apache.org/docs/latest/spark-standalone.html).
 
 Interacting with HDFS
 ---------------------
