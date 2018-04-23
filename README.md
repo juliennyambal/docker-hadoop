@@ -197,8 +197,9 @@ E.g.
 - Listing the contents of the root of the file system: `hdfs dfs -ls /`
 - Upload files or folders in a directory in hdfs: `hdfs dfs -put <localsrc> ... <HDFS_dest_Path>`, explicitely `hdfs dfs -put file.ext /user/hadoop/`
 
-Reference: [Manage HDFS](http://fibrevillage.com/storage/630-using-hdfs-command-line-to-manage-files-and-directories-on-hadoop)
-
+Reference: 
+- [Manage HDFS 1](http://fibrevillage.com/storage/630-using-hdfs-command-line-to-manage-files-and-directories-on-hadoop)
+- [Manage HDFS 2](https://dzone.com/articles/top-10-hadoop-shell-commands)
 ### Remote access
 
 1. Make sure you've got the same version of Hadoop downloaded and extracted on
