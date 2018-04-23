@@ -215,13 +215,15 @@ Web interfaces
 |:------------------------------|:-----------------------------------------------------------------------|
 | *Hadoop Name Node*            | [http://localhost:50070](http://localhost:50070)                       |
 | *Hadoop Data Node*            | [http://localhost:50075](http://localhost:50075)                       |
+| *Hadoop Resource Manager*     | [http://localhost:8088](http://localhost:8088)                         |
+| *Spark UI*                    | [http://localhost:8080](http://localhost:8080/)                        |
 | *WebHDFS REST API*            | [http://localhost:50070/webhdfs/v1](http://localhost:50070/webhdfs/v1) |
 | *NodeManager UI on Data Node* | [http://localhost:8042](http://localhost:8042)                         |
-| *YARN Resource Manager*       | [http://localhost:8088](http://localhost:8088)                         |
-| *Spark UI*                    | [http://localhost:4040](http://localhost:4040)                         |
+| *Spark UI(Alternative)*       | [http://localhost:4040](http://localhost:4040)                         |
 | *Zeppelin UI*                 | [http://localhost:9001](http://localhost:9001)                         |
 
-Change `localhost` to the IP address or host name of the *namenode*.
+
+Change `localhost` to the **IP address** or **host name** of the *namenode*.
 
 ### WebHDFS REST API
 
