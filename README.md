@@ -192,7 +192,10 @@ Interacting with HDFS
 
 When you're logged into the *namenode*, simply use the `hadoop dfs ...` command
 to interact with the HDFS cluster.
-E.g. listing the contents of the root of the file system: `hdfs dfs -ls /`
+E.g. 
+
+- Listing the contents of the root of the file system: `hdfs dfs -ls /`
+- Upload files or folders in a directory in hdfs: `hdfs dfs -put <localsrc> ... <HDFS_dest_Path>`, explicitely `hdfs dfs -put file.ext /user/hadoop/`
 
 ### Remote access
 
