@@ -169,6 +169,11 @@ Now, test your configuration:
 `df = sqlContext.sqlContext.read.format("com.databricks.spark.avro").load("/user/mapr/avro-test/t.avro")`\
 `a = df.collect()`
 
+If there in a problem with the previous command, remove one of the repeating `sqlContext`:
+
+`df = sqlContext.read.format("com.databricks.spark.avro").load("/user/mapr/avro-test/t.avro")`\
+`a = df.collect()`
+
 For this, you might need to create your own avro file [This might help](https://stackoverflow.com/questions/44487684/read-and-write-schema-when-using-the-python-avro-library), otherwise you might get an error like this: 
 
 `: java.io.IOException: Not an Avro data file`.
