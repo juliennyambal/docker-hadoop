@@ -186,7 +186,7 @@ Although spark is set on the system, it is not running. To do so we have to:
 
 - **Starting a spark master node manually** with the command `$SPARK_HOME/sbin/start-master.sh`. Once started, the master will print out a `spark://HOST:PORT URL` for itself, which you can use to connect workers to it, or pass as the `master` argument to SparkContext. You can also find this URL on the master’s web UI, which is [http://localhost:8080](http://localhost:8080) by default. Alternatively, you can check the file `/usr/local/spark/logs/spark--org.apache.spark.deploy.master.Master-1-hadoop-namenode.out` for more information about the new started spark master node.
 
-- **Starting a spark slave node manually**, similarly, you can start one or more workers and connect them to the master via the command `$SPARK_HOME/sbin/start-slave.sh <master-spark-URL>`. Once you have started a worker, look at the master’s web UI (http://localhost:8080 by default). You should see the new node listed there, along with its number of CPUs and memory (minus one gigabyte left for the OS).
+- **Starting a spark slave node manually**, similarly, you can start one or more workers and connect them to the master via the command `$SPARK_HOME/sbin/start-slave.sh <master-spark-URL>`. `<master-spark-URL>` is at follows: `spark://url:7077`. Once you have started a worker, look at the master’s web UI (http://localhost:8080 by default). You should see the new node listed there, along with its number of CPUs and memory (minus one gigabyte left for the OS).
 
 Reference: [Spark Standalone Mode](https://spark.apache.org/docs/latest/spark-standalone.html), [Spark Setup](http://paxcel.net/blog/how-to-setup-apache-spark-standalone-cluster-on-multiple-machine/)
 
