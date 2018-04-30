@@ -151,8 +151,8 @@ Setting Avro 4.0.0 with Hadoop 2.9.0 and Spark 2.2.0
 
 In this docker, I have included the install of `python-pip`. From there you will need to install `pyspark` (Spark for python). After that, some spark settings (obviously as a `root` user):
 
-- Download the spark-avro jar file: [spark-avro jar](http://repo1.maven.org/maven2/com/databricks/spark-avro_2.11/4.0.0/spark-avro_2.11-4.0.0.jar), and put it in `$HADOOP/jars/` folder (or equivalent spark jar folder: /usr/...),
-- Modify the file in `$HADOOP/conf/spark-defaults.conf`.  Append these lines to the latter file: 
+- Download the spark-avro jar file: [spark-avro jar](http://repo1.maven.org/maven2/com/databricks/spark-avro_2.11/4.0.0/spark-avro_2.11-4.0.0.jar), and put it in `$SPARK_HOME/jars/` folder (or equivalent spark jar folder: /usr/...),
+- Modify the file in `$SPARK_HOME/conf/spark-defaults.conf`.  Append these lines to the latter file: 
 
 `spark.driver.extraClassPath /opt/spark-jars/spark-avro_2.10-2.0.1.jar`\
 `spark.executor.extraClassPath /opt/spark-jars/spark-avro_2.10-2.0.1.jar`
