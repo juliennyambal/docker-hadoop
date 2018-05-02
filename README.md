@@ -188,6 +188,8 @@ Although spark is set on the system, it is not running. To do so we have to:
 
 - **Starting a spark slave node manually**, similarly, you can start one or more workers and connect them to the master via the command `$SPARK_HOME/sbin/start-slave.sh <master-spark-URL>`. `<master-spark-URL>` is at follows: `spark://url:7077`. Once you have started a worker, look at the master’s web UI (http://localhost:8080 by default). You should see the new node listed there, along with its number of CPUs and memory (minus one gigabyte left for the OS).
 
+**Starting a spark cluster** unless you have set everything regarding the `ssh` and `sshd` ports, this step will always fail. This docker is set not to fail. Then run: `$SPARK_HOME/sbin/start-all.sh`
+
 Reference: [Spark Standalone Mode](https://spark.apache.org/docs/latest/spark-standalone.html), [Spark Setup](http://paxcel.net/blog/how-to-setup-apache-spark-standalone-cluster-on-multiple-machine/)
 
 In case RabbitMQ
