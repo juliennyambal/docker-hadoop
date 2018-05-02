@@ -194,6 +194,7 @@ In case RabbitMQ
 ---------------------
 
 https://tecadmin.net/install-rabbitmq-server-on-ubuntu/
+https://docs.sensu.io/sensu-core/1.0/installation/install-rabbitmq-on-ubuntu-debian/#managing-the-rabbitmq-service-process
 
 Interacting with HDFS
 ---------------------
