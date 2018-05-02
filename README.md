@@ -190,6 +190,11 @@ Although spark is set on the system, it is not running. To do so we have to:
 
 Reference: [Spark Standalone Mode](https://spark.apache.org/docs/latest/spark-standalone.html), [Spark Setup](http://paxcel.net/blog/how-to-setup-apache-spark-standalone-cluster-on-multiple-machine/)
 
+In case RabbitMQ
+---------------------
+
+https://tecadmin.net/install-rabbitmq-server-on-ubuntu/
+
 Interacting with HDFS
 ---------------------
 
