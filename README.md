@@ -178,7 +178,7 @@ For this, you might need to create your own avro file [This might help](https://
 
 `: java.io.IOException: Not an Avro data file`.
 
-References: [Databricks](https://github.com/databricks/spark-avro),[York Huang](https://yorkhuang-au.github.io/2016/09/07/Setup-Pyspark/).
+References: [Databricks](https://github.com/databricks/spark-avro),[York Huang](https://yorkhuang-au.github.io/2016/09/07/Setup-Pyspark/), [Avro Critical Start](https://maprdocs.mapr.com/home/Spark/IntegrateSpark_Avro.html).
 
 #### Spark
 
