@@ -198,6 +198,18 @@ In case RabbitMQ
 https://tecadmin.net/install-rabbitmq-server-on-ubuntu/
 https://docs.sensu.io/sensu-core/1.0/installation/install-rabbitmq-on-ubuntu-debian/#managing-the-rabbitmq-service-process
 
+RabbitMQ is already installed in the set of installtion. It just needs to be activated. You can do it this way:
+
+```bash
+service rabbitmq-server start
+service rabbitmq-server stop
+service rabbitmq-server start
+rabbitmqctl add_user user_name_to_be_defined associated_password_to_be_defined
+rabbitmqctl set_user_tags user_name_to_be_defined administrator
+rabbitmqctl set_permissions -p / kpc ".*" ".*" ".*"
+rabbitmq-plugins enable rabbitmq_management
+```
+
 Interacting with HDFS
 ---------------------
 
