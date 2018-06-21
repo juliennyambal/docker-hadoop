@@ -206,7 +206,7 @@ service rabbitmq-server stop
 service rabbitmq-server start
 rabbitmqctl add_user user_name_to_be_defined associated_password_to_be_defined
 rabbitmqctl set_user_tags user_name_to_be_defined administrator
-rabbitmqctl set_permissions -p / kpc ".*" ".*" ".*"
+rabbitmqctl set_permissions -p / user_name_to_be_defined ".*" ".*" ".*"
 rabbitmq-plugins enable rabbitmq_management
 ```
 
